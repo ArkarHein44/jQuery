@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delegate and Undelegate method</title>
+    <style type="text/css">
+        
+       
+    </style>
+</head>
+<body>
+    
+    
+        <h1>Hello Myanmar</h1>
+        <h1>Hello Thailand</h1>
+        <h2>Hello Thrirlanka</h2>
+
+        <button type="button" class="dlg-btn">Delegate Me</button>
+        <button type="button" class="undlg-btn">Undelegate Me</button>
+        <button type="button" class="hi-btn">Say Hi</button>
+        <button type="button" class="zoom-btn">Zoom</button>
+
+        <hr/>
+        <div class="container">
+            <h3>Hello Indonesia</h3>
+            <button type="button" id="dlgme-btn">delegate me</button>
+            <button type="button" id="undlgme-btn">Undelegate me</button>
+        </div>
+
+    <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+
+    <script>
+        $('document').ready(function(){
+           //=> delegate
+           //$(selector).delegate(selector,eventtype,callbackfunction);
+
+           $('body').delegate('.dlg-btn','click',function(){
+            $('h1').after('<p>thanks for delegate me</p>');
+           });
+
+           //=>undelegate
+           $('.undlg-btn').click(function(){
+            $('body').undelegate();
+           });
+
+           $('.hi-btn').click(function(){
+            console.log("hello sir");
+           });
+
+           let x = 0;
+           $('.zoom-btn').click(function(e){
+            //console.log(e.target);
+
+            //$('h2').css({
+                // fontSize:"+=10px";
+            // });
+
+            $('h2').animate({
+                fontSize:"+=10px"
+            });
+
+            
+            // $(this).text("Zoom "+ (x+1));
+            $('.zoom-btn').text("Zoom x "+ (x+1) );
+            x++;
+           
+            if(x >= 5){
+                $('body').undelegate(e);
+            }
+           });
+
+           $('.container').delegate('#dlgme-btn','click',function(){
+            $('h3').after('<p>Thanks for delegate me again.</p>');
+
+           });
+
+           $('#undlgme-btn').click(function(){
+            //$('.container').undelegate();
+            $('.container').undelegate('click');
+           })
+        });
+    </script>
+</body>
+</html>
+
+<!-- 25DE -->
