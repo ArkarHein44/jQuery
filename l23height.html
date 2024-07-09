@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Height</title>
+    <style type="text/css">
+       body{
+        padding: 0;
+        margin: 0;
+
+       } 
+
+       .container{
+        display: flex;
+       }
+       .box1{
+        width: 100px;
+        height: 100px;
+
+        border: 5px solid #000;
+        padding: 10px;
+        margin: 5px;
+       }
+
+       .box2{
+        width: 100px;
+        height: 200px;
+       }
+
+       .box3{
+        width: 100px;
+        height: 300px;
+       }
+
+       .box4{
+        width: 100px;
+        height: 400px;
+       }
+
+       .box5{
+        width: 100px;
+        height: 500px;
+       }
+
+       .red{
+        background-color: red;
+       }
+
+       .green{
+        background-color: green;
+       }
+
+       .orange{
+        background-color: orange;
+       }
+
+       .blue{
+        background-color: blue;
+       }
+
+       .violet{
+        background-color: violet;
+       }
+       
+    </style>
+</head>
+<body>
+
+    <div class="container">
+       <div class="box1 red">Box 1</div>
+       <div class="box2 green">Box 2</div>
+       <div class="box3 orange">Box 3</div>
+       <div class="box4 blue">Box 4</div>
+       <div class="box5 violet">Box 5</div>
+    </div>
+
+    
+    
+
+
+    <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+
+    <script>
+        $('document').ready(function(){
+           $('.box1').click(function(){
+            console.log("box1 width = "+ $(this).height());
+            console.log("box1 width = "+ $(this).innerHeight());
+            console.log("box1 outer width = " + $(this).outerHeight());
+           })
+
+           $('.box2').click(function(){
+            console.log("box2 width = "+ $(this).height());
+            console.log("box2 width = "+ $(this).innerHeight());
+            console.log("box2 outer width = " + $(this).outerHeight());
+           })
+
+           $('.box3').click(function(){
+            console.log("box3 width = "+ $(this).height());
+            console.log("box3 width = "+ $(this).innerHeight());
+            console.log("box3 outer width = " + $(this).outerHeight());
+           })
+
+           $('.box4').click(function(){
+            console.log("box4 width = "+ $(this).height());
+            console.log("box4 width = "+ $(this).innerHeight());
+            console.log("box4 outer width = " + $(this).outerHeight());
+           })
+
+           $('.box5').click(function(){
+            console.log("box5 width = "+ $(this).height());
+            console.log("box5 width = "+ $(this).innerHeight());
+            console.log("box5 outer width = " + $(this).outerHeight());
+           })
+        })
+    </script>
+</body>
+</html>
+
+<!-- 26TG -->

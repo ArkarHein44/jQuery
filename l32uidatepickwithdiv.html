@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UI Date Picker with div</title>
+    <link rel="stylesheet" href="./libs/jquery-ui-1.13.2/jquery-ui.min.css" type="text/css" />
+    <style type="text/css">
+        body{
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            width: 900px;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .form-group{
+            margin: 10px 0;
+        }
+
+        .form-group label{
+            display: block;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .justify-content-end{
+            display: flex;
+            justify-content: end;
+        }
+    </style>
+</head>
+<body>
+    
+   <div class="container">
+    <form action="" method="">
+        <div class="form-group">
+            <label for="workingday">Working Day</label>
+            <div id="workingday"></div>
+        </div>
+
+        <div class="form-group">
+            <label for="multiviews">Multi views</label>
+            <div id="multiviews"></div>
+        </div>
+
+        <div class="justify-content-end">
+            <button type="submit" id="btn" class="btn">Submit</button>
+        </div>
+    </form>
+   </div>
+
+
+<script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+<script src="./libs/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+    //jquery start
+        $('#workingday').datepicker();
+
+         $('#multiviews').datepicker({
+            numberOfMonths:3,
+
+            //dateFormat:"yy-mm-dd", //2024-04-04
+            //dateFormat:"dd-mm-yy",
+            //dateFormat:"dd-MM-yy",
+
+            dateFormat:"dd MM yy",
+         });
+
+
+         $('#btn').click(function(e){
+            const getworkingday = $('#workingday').val();
+            const getmultiviews = $('#multiviews').val();
+
+            console.log("this is working day = ", getworkingday);
+            console.log("this is multi views =", getmultiviews);
+
+            e.preventDefault();
+         });
+
+         
+
+    //iquery end            
+    });
+
+</script>
+</body>
+</html>
+
+<!-- 3DI-->

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Is and not</title>
+    <style type="text/css">
+       body{
+
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+
+       } 
+
+       .container{
+        width: 900px;
+        background-color: #f4f4f4;
+
+        padding: 20px;
+
+        display: flex;
+        
+       }
+
+       .box{
+        width:150px;
+        height: 300px;
+       }
+
+       .square1{
+        background-color: green;
+       }
+       .square2{
+        background-color: orange;
+       }
+       .square3{
+        background-color: blue;
+       }
+       .square4{
+        background-color: violet;
+       }
+       .square5{
+        background-color: brown;
+       }
+
+       .text-light{
+        color: #fff;
+       }
+       
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Is and Not Method</h1>
+        <p>This is awesome jQuery 3.7.1</p>
+    </div>
+
+    <div class="container">
+       <div class="box square1">
+        <h4>Box1 by h4</h4>
+       </div>
+       <hr/>
+       <div class="box square2">
+        <h3>Box2 by h3</h3>
+       </div>
+       <hr/>
+       <div class="box square3">
+        <h2 class="text-light">Box3 by h2</h2>
+       </div>
+       <hr/>
+       <div class="box square4">
+        <h3>Box4 by h3</h3>
+       </div>
+       <hr/>
+       <div class="box square5">
+        <h2>Box5 by h2</h2>
+       </div>
+    </div>
+
+    <div>
+        <button type="button" id="even-btn">Even Button</button>
+        <button type="button" id="odd-btn">Odd Button</button>
+        <button type="button" id="slice-btn">Slice Button</button>
+    </div>
+    
+
+
+    <script src="./libs/jquery-3.7.1.min.js" type="text/javascript"></script>
+
+    <script>
+        $('document').ready(function(){
+          
+            //=> is()
+            // $('.container').click(function(){
+
+            //     if($('.box').children().is('h3')){
+            //         $('.box').children('h3').css('background-color','black');
+            //     }
+            // })
+
+            //=> not()
+            $('.container').click(function(){
+
+                // if($('.box').children().is('h2')){
+                //     $('.box').children('h2').css('background-color','black');
+                // }
+
+                // if($('.box').children().is('h2')){
+                //     $('.box').children('h2').not('.text-light').css('background-color','yellow');
+                // }
+
+                if($('.box').children().is('h2')){
+                    $('.box').children().not('.text-light').css('background-color','steelblue');
+                }
+            })
+
+        })
+    </script>
+</body>
+</html>
+
+<!-- 27BO -->
